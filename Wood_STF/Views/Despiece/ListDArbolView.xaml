@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Wood_STF.Views.Despiece.ListDArbolView"
+             x:Name="Arboles"
+             Title="Arboles">
+    <ContentPage.Content>
+        <StackLayout>
+            <CollectionView x:Name="LVArbol" SelectionMode="Single" SelectionChanged="LVArbol_SelectionChanged">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="20,10,20,20" RowSpacing="5" ColumnSpacing="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.6*"/>
+                                <ColumnDefinition Width="0.4*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" FontSize="20">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span TextColor="DarkRed"  FontAttributes="Bold" Text="Arbol: " FontSize="20"/>
+                                        <Span Text="{Binding CodQR}" FontAttributes="Bold" FontSize="20"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label Grid.Row="0" Grid.Column="1" FontSize="20">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span TextColor="DarkGoldenrod" FontAttributes="Bold" Text="Trozas: " FontSize="20"/>
+                                        <Span Text="{Binding NumTrozas}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

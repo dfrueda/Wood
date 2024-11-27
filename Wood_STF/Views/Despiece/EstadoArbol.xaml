@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Wood_STF.Views.Despiece.EstadoArbol">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="Titulo" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="FontSize"  Value="30"/>
+                <Setter Property="TextColor" Value="DarkRed"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Margin" Value="10,20,10,30"/>
+            </Style>
+            <Style x:Key="Subtitulo" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Start"/>
+                <Setter Property="FontSize"  Value="20"/>
+                <Setter Property="TextColor" Value="DarkRed"/>
+                <Setter Property="Margin" Value="10,10,10,10"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="10,20,10,20" Spacing="1">
+                <Frame>
+                    <StackLayout Padding="10,20,10,10">
+                        <Label Text="{Binding CodQR}" Style="{StaticResource Titulo}"/>
+                        <Label Style="{StaticResource Subtitulo}">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="Numero de Trozas: "></Span>
+                                        <Span Text="{Binding NumTrozas}"></Span>
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Label Text="Observaciones" Style="{StaticResource Subtitulo}"/>
+                        <Editor Text="{Binding Observaciones}" AutoSize="TextChanges" Completed="Editor_Completed"/>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

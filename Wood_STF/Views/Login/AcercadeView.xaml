@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Wood_STF.Views.Login.AcercadeView"
+             Title="Acerca de">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label" x:Key="Subtitulo1">
+                <Setter Property="FontSize" Value="30"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Margin" Value="10,10,10,10"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="TextColor" Value="DarkGreen"/>
+            </Style>
+            <Style TargetType="Label" x:Key="Subtitulo2">
+                <Setter Property="FontSize" Value="25"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Margin" Value="10,10,10,10"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="TextColor" Value="DarkCyan"/>
+            </Style>
+            <Style TargetType="Label" x:Key="Desarrollador">
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="TextColor" Value="DarkRed"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Padding="10,20,10,30">
+                <Label Text="Wood" FontSize="60" TextColor="Chocolate" FontAttributes="Bold"
+                   Margin="0,20,0,0" HorizontalTextAlignment="Center" HorizontalOptions="Center"/>
+                <Label Text="Version 1.0" FontSize="20" TextColor="LightCoral" FontAttributes="None"
+                   Margin="0,0,0,30" HorizontalTextAlignment="Center" HorizontalOptions="Center"/>
+                <Label Text="Desarrollado Para:" Style="{x:StaticResource Subtitulo1}"/>
+                <Image Source="logosoyforestal.jpg" HeightRequest="250" Margin="0,0,0,20"></Image>
+                <Label Text="Desarrollado Por:" Style="{x:StaticResource Subtitulo2}"/>
+                <Label Text="Diego Felipe Rueda Baracaldo" Style="{x:StaticResource Desarrollador}" />
+                <Label Text="Desarrollador Senior" Style="{x:StaticResource Desarrollador}" />
+                <Label Text="dfruedab@outlook.com" Style="{x:StaticResource Desarrollador}" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

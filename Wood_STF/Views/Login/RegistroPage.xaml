@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Wood_STF.Views.RegistroPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="30,20,30,20" Spacing="3">
+                <Label Text="Registro" FontSize="60" TextColor="DarkCyan" FontAttributes="Bold"
+                       Margin="0,20,0,40" HorizontalTextAlignment="Center" HorizontalOptions="Center"/>
+                <Label Text="Nombre*" FontSize="20" TextColor="ForestGreen"/>
+                <Entry x:Name="ENombre" Placeholder="Nombre o Equipo" Keyboard="Text" CharacterSpacing="3" MaxLength="20" 
+                       IsTextPredictionEnabled="False" IsSpellCheckEnabled="True" 
+                       Text="{Binding Nombre}"></Entry>
+                <Label Text="Apellido*" FontSize="20" TextColor="ForestGreen" Margin="0,10,0,0"/>
+                <Entry x:Name="EApellido" Placeholder="Usuario" Keyboard="Text" CharacterSpacing="3" MaxLength="20" 
+                       IsTextPredictionEnabled="False" IsSpellCheckEnabled="True" Text="{Binding Apellido}"></Entry>
+                <Label Text="Cedula o Usuraio*" FontSize="20" TextColor="ForestGreen" Margin="0,10,0,0"/>
+                <Entry x:Name="EId" Keyboard="Numeric" CharacterSpacing="3" MaxLength="30" Text="{Binding ID}"
+                       IsTextPredictionEnabled="False"></Entry>
+                <Label x:Name="LAdvertencia" Text="*El usuario debe coincidir con el ingresado en el Login" FontSize="15" TextColor="Red" Margin="5,0,0,0"/>
+                <Button x:Name="BRegistro" Text="Registrar" HorizontalOptions="FillAndExpand" CornerRadius="20" VerticalOptions="EndAndExpand" Margin="10,60,10,10" HeightRequest="50"
+                        BackgroundColor="ForestGreen" TextColor="White" BorderWidth="2" BorderColor="LightGreen"
+                        FontAttributes="Bold" FontSize="Medium" IsEnabled="{Binding Cargando}"></Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

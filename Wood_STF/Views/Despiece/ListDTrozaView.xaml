@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Wood_STF.Views.Despiece.ListDTrozaView">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="LVTroza" HasUnevenRows="True" Refreshing="LVTroza_Refreshing" IsPullToRefreshEnabled="true" RefreshControlColor="Red">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Eliminar" 
+                                          IconImageSource="borrar.png"
+                                          IsDestructive="False"
+                                          Clicked="MenuItem_Clicked"
+                                          Command="{Binding EliminarCommand}"/>
+                            </ViewCell.ContextActions>
+                            <Grid Padding="20,10,20,20" RowSpacing="5" ColumnSpacing="5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.8*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0" FontSize="20">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span TextColor="DarkRed" FontAttributes="Bold" Text="Troza: " FontSize="20"/>
+                                            <Span Text="{Binding CodQR}" FontAttributes="Bold" FontSize="20"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
